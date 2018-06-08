@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{24A060FE-BFF5-4CD1-8E76-ACDEF62FB5CC}|Default">
+  <MonoDevelop.Ide.ItemProperties.isput PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="isput/EmptyJSONFile.json">
+    <Files>
+      <File FileName="isput/Program.cs" Line="14" Column="55" />
+      <File FileName="isput/Book.cs" Line="65" Column="14" />
+      <File FileName="isput/BookCompare.cs" Line="12" Column="26" />
+      <File FileName="isput/EmptyJSONFile.json" Line="2" Column="11" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,27 @@
+﻿[
+  {
+    "_name": "Book1",
+    "_author": "Author1",
+    "_price": 340
+  },
+  {
+    "_name": "Book2",
+    "_author": "Author2",
+    "_price": 200
+  },
+  {
+    "_name": "Book3",
+    "_author": "Author3",
+    "_price": 1000
+  },
+  {
+    "_name": "Book4",
+    "_author": "Author5",
+    "_price": 50
+  },
+  {
+    "_name": "Book5",
+    "_author": "Author5",
+    "_price": 100
+  }
+]
