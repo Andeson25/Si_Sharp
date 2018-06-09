@@ -4,3 +4,5 @@
 /Users/olehpetryk/Projects/isput/isput/obj/x86/Debug/isput.csproj.CoreCompileInputs.cache
 /Users/olehpetryk/Projects/isput/isput/obj/x86/Debug/isput.exe
 /Users/olehpetryk/Projects/isput/isput/obj/x86/Debug/isput.pdb
+/Users/olehpetryk/Projects/isput/isput/bin/Debug/Newtonsoft.Json.dll
+/Users/olehpetryk/Projects/isput/isput/bin/Debug/Newtonsoft.Json.xml

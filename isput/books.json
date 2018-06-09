@@ -1,27 +1,32 @@
 ﻿[
   {
-    "_name": "Book1",
-    "_author": "Author1",
-    "_price": 340
+    "Id": 1,
+    "Name": "Book1",
+    "Author": "Author1",
+    "Price": 340
   },
   {
-    "_name": "Book2",
-    "_author": "Author2",
-    "_price": 200
+    "Id": 2,
+    "Name": "Book2",
+    "Author": "Author2",
+    "Price": 200
   },
   {
-    "_name": "Book3",
-    "_author": "Author3",
-    "_price": 1000
+    "Id": 3,
+    "Name": "Book3",
+    "Author": "Author3",
+    "Price": 1000
   },
   {
-    "_name": "Book4",
-    "_author": "Author5",
-    "_price": 50
+    "Id": 4,
+    "Name": "Book4",
+    "Author": "Author5",
+    "Price": 50
   },
   {
-    "_name": "Book5",
-    "_author": "Author5",
-    "_price": 100
+    "Id": 5,
+    "Name": "Book5",
+    "Author": "Author5",
+    "Price": 100
   }
 ]

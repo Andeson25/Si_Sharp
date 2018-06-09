@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json.Serialization;
 
 namespace isput
 {
@@ -12,11 +13,16 @@ namespace isput
         private Double _price;
         private Boolean _isBought;
 
-       
+
 
         public event bookEvent bookHasBeenBought;
         public event bookEvent bookHasBeenSold;
 
+        public Int32 Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
 
         public String Name
         {
@@ -79,11 +85,14 @@ namespace isput
         {
             return left.Price < right.Price;
         }
-
+     
         public static bool operator >(Book left, Book right)
         {
             return left.Price > right.Price;
         }
+
+
+
 
         public override string ToString()
         {
@@ -92,7 +101,15 @@ namespace isput
 
         public void print()
         {
-            Console.WriteLine("_______________\nid: {0}\nName: {1}\nAuthor: {2}\nIs bought: {3}\nPrice: {4}\n_______________", _id, _name, _author, _isBought, _price);
+            Console.WriteLine("_______________\nid: {0}\nName: {1}\nAuthor: {2}\nIs bought: {3}\nPrice: {4}\n_______________\n", _id, _name, _author, _isBought, _price);
+        }
+
+        public Book(Book obj)
+        {
+            this._id = obj.Id;
+            this._author = obj.Author;
+            this._name = obj.Name;
+            this._price = obj.Price;
         }
     }
 }
