@@ -7,11 +7,11 @@ namespace isput
     public class Book
     {
         private static int _globalID = 0;
-        private Int32 _id;
-        private String _name;
-        private String _author;
-        private Double _price;
-        private Boolean _isBought;
+        protected Int32 _id;
+        protected String _name;
+        protected String _author;
+        protected Double _price;
+        protected Boolean _isBought;
 
 
 
@@ -99,9 +99,10 @@ namespace isput
             return base.ToString();
         }
 
-        public void print()
+        public virtual void print()
         {
-            Console.WriteLine("_______________\nid: {0}\nName: {1}\nAuthor: {2}\nIs bought: {3}\nPrice: {4}\n_______________\n", _id, _name, _author, _isBought, _price);
+            Console.WriteLine("_______________\nid: {0}\nName: {1}\nAuthor: {2}\nIs bought: {3}\nPrice: {4}\n_______________\n"
+                              , _id, _name, _author, _isBought, _price);
         }
 
         public Book(Book obj)

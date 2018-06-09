@@ -29,7 +29,7 @@ namespace isput
             BookCompare compare = new BookCompare();
             foreach (Book one in books)
             {
-                if (compare.Compare(one,max)>=0)
+                if (compare.Compare(one, max) >= 0)
                     max = one;
             }
             return max;
@@ -46,14 +46,8 @@ namespace isput
         }
         public static void Main(string[] args)
         {
-            foreach (Book book in FindAll())
-            {
-                book.print();
-            }
             Console.WriteLine("FOUND BOOK WITH ID = 2");
-            FindOne(2).print();
-            Console.WriteLine("FOUND MOST EXPENSIVE");
-            FindMostExpensive().print();
+            FindOne(6).print();
         }
 
     }
