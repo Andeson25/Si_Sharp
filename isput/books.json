@@ -1,4 +1,4 @@
-﻿
+﻿[
   {
     "Id": 1,
     "Name": "Book1",
@@ -36,3 +36,4 @@
     "Price": 100000,
     "Description": "Description of science book"
   }
+]

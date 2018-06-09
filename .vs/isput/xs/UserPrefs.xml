@@ -1,14 +1,9 @@
 ﻿<Properties StartupConfiguration="{24A060FE-BFF5-4CD1-8E76-ACDEF62FB5CC}|Default">
   <MonoDevelop.Ide.ItemProperties.isput PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="isput/EmptyInterface.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="isput/Program.cs">
     <Files>
-      <File FileName="isput/Program.cs" Line="30" Column="10" />
-      <File FileName="isput/ScienceBook.cs" Line="7" Column="34" />
-      <File FileName="isput/Book.cs" Line="19" Column="48" />
-      <File FileName="isput/BookCompare.cs" Line="8" Column="16" />
-      <File FileName="isput/books.json" Line="37" Column="17" />
-      <File FileName="../../Downloads/Program.cs" Line="2" Column="1" />
-      <File FileName="isput/EmptyInterface.cs" Line="4" Column="22" />
+      <File FileName="isput/Program.cs" Line="21" Column="6" />
+      <File FileName="isput/BookService.cs" Line="26" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
