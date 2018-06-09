@@ -91,14 +91,6 @@ namespace isput
             return left.Price > right.Price;
         }
 
-
-
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-
         public virtual void print()
         {
             Console.WriteLine("_______________\nid: {0}\nName: {1}\nAuthor: {2}\nIs bought: {3}\nPrice: {4}\n_______________\n"
