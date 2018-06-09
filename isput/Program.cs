@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Newtonsoft.Json.Linq;
 
 namespace isput
 {
@@ -14,9 +11,8 @@ namespace isput
         }
         public static void Main(string[] args)
         {
-            string json = File.ReadAllText("../../books.json");
-            JArray kek = new JArray(json);
-            Console.WriteLine(kek.Count);
+            var book = new Book("name", "author", true, 100.5);
+            book.print();
         }
     }
 }
