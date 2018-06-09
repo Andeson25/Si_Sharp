@@ -46,7 +46,7 @@ namespace isput
         }
         public static void Main(string[] args)
         {
-            Console.WriteLine("FOUND BOOK WITH ID = 2");
+            Console.WriteLine("FOUND BOOK WITH ID = 6");
             FindOne(6).print();
         }
 
