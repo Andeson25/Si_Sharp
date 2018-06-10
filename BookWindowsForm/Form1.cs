@@ -17,6 +17,8 @@ namespace BookWindowsForm
         List<Book> books = new List<Book>();
         String currentFileName = "";
 
+        addForm addForm = new addForm();
+        Boolean isSaved = false;
 
         public Form1()
         {
@@ -41,37 +43,72 @@ namespace BookWindowsForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StatusStrip.Items.Clear();
-            books = BookService.FindAll("../../books.json");
-            foreach (Book one in books)
-            {
-                BookGrid.Rows.Add(one.toArray());
-            }
-            StatusStrip.Items.Add("Books have been loaded");
+
         }
 
 
-        private void BookGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void ClearTextBoxes()
         {
-
+            addForm.result = new Book();
+            addForm.textBox1.Text = "";
+            addForm.textBox2.Text = "";
+            addForm.textBox3.Text = "";
+            addForm.textBox4.Text = "";
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                if (books.Count == 0)
+                {
+                    addForm.result.Id = 1;
+                    books.Add(addForm.result);
+                }
+                else
+                {
+                    addForm.result.Id = books[books.Count-1].Id + 1;
+                    books.Add(addForm.result);
+                }
+
+           
+
+                BookGrid.Rows.Clear();
+                foreach (Book one in books)
+                {
+                    BookGrid.Rows.Add(one.toArray());
+                }
+
+                saveToolStripMenuItem.Enabled = true;
+                saveAsToolStripMenuItem.Enabled = true;
+                isSaved = false;
+
+
+             
+            }
+            ClearTextBoxes();
 
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(!currentFileName.Equals(""))
+            if ( !isSaved && BookGrid.Rows.Count != 0)
             {
                 var a = MessageBox.Show($"File {currentFileName.Split('\\')[currentFileName.Split('\\').Length - 1]} is not saved", "File is not saved", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                
-                if (a == DialogResult.OK)
+
+                if (a == DialogResult.OK&& currentFileName != ""&& BookGrid.Rows.Count != 0)
                 {
                     StatusStrip.Items.Clear();
                     BookService.Save(books, currentFileName);
                     StatusStrip.Items.Add($"Books have been saved to {currentFileName.Split('\\')[currentFileName.Split('\\').Length - 1]}");
+                }
+                if (currentFileName==""&&a == DialogResult.OK && saveFileDialog1.ShowDialog() == DialogResult.OK && BookGrid.Rows.Count!=0)
+                {
+                    StatusStrip.Items.Clear();
+                    currentFileName = saveFileDialog1.FileName;
+                    isSaved = true;
+                    StatusStrip.Items.Add($"Books have been saved to {currentFileName.Split('\\')[currentFileName.Split('\\').Length - 1]}");
+                    BookService.Save(books, currentFileName);
                 }
             }
 
@@ -88,6 +125,7 @@ namespace BookWindowsForm
                 }
                 saveToolStripMenuItem.Enabled = true;
                 saveAsToolStripMenuItem.Enabled = true;
+                isSaved = false;
                 StatusStrip.Items.Add($"Books have been loaded from file {currentFileName.Split('\\')[currentFileName.Split('\\').Length - 1]}");
             }
         }
@@ -101,6 +139,8 @@ namespace BookWindowsForm
                 StatusStrip.Items.Clear();
                 BookService.Save(books, currentFileName);
                 StatusStrip.Items.Add($"Books have been saved to {currentFileName.Split('\\')[currentFileName.Split('\\').Length - 1]}");
+                isSaved = true;
+                saveToolStripMenuItem.Enabled = false;
             }
             else
             {
@@ -114,6 +154,9 @@ namespace BookWindowsForm
                     {
                         BookGrid.Rows.Add(one.toArray());
                     }
+                    saveToolStripMenuItem.Enabled = true;
+                    saveAsToolStripMenuItem.Enabled = true;
+                    isSaved = false;
                     StatusStrip.Items.Add("Books have been loaded from file");
                 }
             }
@@ -127,6 +170,7 @@ namespace BookWindowsForm
                 {
                     StatusStrip.Items.Clear();
                     currentFileName = saveFileDialog1.FileName;
+                    isSaved = true;
                     StatusStrip.Items.Add($"Books have been saved to {currentFileName.Split('\\')[currentFileName.Split('\\').Length - 1]}");
                     BookService.Save(books, currentFileName);
                 }
@@ -143,9 +187,34 @@ namespace BookWindowsForm
                     {
                         BookGrid.Rows.Add(one.toArray());
                     }
+                    isSaved = false;
                     StatusStrip.Items.Add("Books have been loaded from file");
                 }
             }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (BookGrid.SelectedRows.Count != 0)
+            {
+                foreach (DataGridViewRow one in BookGrid.SelectedRows)
+                {
+                    books.RemoveAt(one.Index);
+
+                }
+                BookGrid.Rows.Clear();
+                foreach (Book one in books)
+                {
+                    BookGrid.Rows.Add(one.toArray());
+                }
+                isSaved = false;
+                saveToolStripMenuItem.Enabled = true;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

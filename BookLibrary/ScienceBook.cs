@@ -15,7 +15,7 @@ namespace BookLibrary
         {
             _description = "Default description";
         }
-        public ScienceBook(String name, String author, Boolean isBought, Double price, String description) : base(name, author, isBought, price)
+        public ScienceBook(Int32 id,String name, String author, Boolean isBought, Double price, String description) : base(id,name, author, isBought, price)
         {
             this._description = description;
         }

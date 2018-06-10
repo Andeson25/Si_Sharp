@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
             this.BookGrid = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,25 +60,17 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.DeleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BookGrid)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button1.Location = new System.Drawing.Point(633, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 73);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Delete Book";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BookGrid
             // 
             this.BookGrid.AllowUserToAddRows = false;
             this.BookGrid.AllowUserToDeleteRows = false;
+            this.BookGrid.AllowUserToResizeColumns = false;
+            this.BookGrid.AllowUserToResizeRows = false;
             this.BookGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BookGrid.BackgroundColor = System.Drawing.Color.White;
             this.BookGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -94,7 +85,6 @@
             this.BookGrid.Name = "BookGrid";
             this.BookGrid.Size = new System.Drawing.Size(615, 195);
             this.BookGrid.TabIndex = 2;
-            this.BookGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookGrid_CellContentClick);
             // 
             // Id
             // 
@@ -138,7 +128,7 @@
             // AddBook
             // 
             this.AddBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.AddBook.Location = new System.Drawing.Point(634, 147);
+            this.AddBook.Location = new System.Drawing.Point(633, 27);
             this.AddBook.Name = "AddBook";
             this.AddBook.Size = new System.Drawing.Size(154, 75);
             this.AddBook.TabIndex = 4;
@@ -303,17 +293,28 @@
             // 
             this.saveFileDialog1.Filter = "json file|*.json";
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.DeleteButton.Location = new System.Drawing.Point(633, 147);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(154, 75);
+            this.DeleteButton.TabIndex = 4;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(792, 404);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.AddBook);
             this.Controls.Add(this.StatusStrip);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.BookGrid);
-            this.Controls.Add(this.button1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -327,8 +328,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView BookGrid;
         private System.Windows.Forms.StatusStrip StatusStrip;
         private System.Windows.Forms.Button AddBook;
@@ -360,6 +359,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }
 

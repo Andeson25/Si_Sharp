@@ -7,7 +7,6 @@ namespace BookLibrary
     public delegate void bookEvent(String message);
     public class Book : IComparable
     {
-        private static int _globalID = 0;
         protected Int32 _id;
         protected String _name;
         protected String _author;
@@ -59,21 +58,15 @@ namespace BookLibrary
         }
         public Book()
         {
-            if (_globalID == 0)
-                _id = 1;
-            _globalID += 1;
-            _id = _globalID;
+            _id = 0;
             _name = "DefaultName";
             _author = "DefaultAuthor";
             _price = 0;
             isBought = true;
         }
-        public Book(string name, string author, bool isBought, double price)
-        {
-            if (_globalID == 0)
-                _id = 1;
-            _globalID += 1;
-            _id += 1;
+        public Book(Int32 id,string name, string author, bool isBought, double price)
+        { 
+            _id = id;
             this._name = name;
             this._author = author;
             this._price = price;
