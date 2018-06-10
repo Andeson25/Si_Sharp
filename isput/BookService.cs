@@ -27,7 +27,7 @@ namespace isput
             string json = File.ReadAllText("../../books.json");
             List<Object> objects = JsonConvert.DeserializeObject<List<Object>>(json);
             Book max = new Book();
-            BookCompare compare = new BookCompare();
+            BookCompare compare = new BookCompare(); 
             foreach (JObject one in objects)
             {
                 if (one.ContainsKey("Description") && compare.Compare(JsonConvert.DeserializeObject<ScienceBook>(one.ToString()), max) >= 0)

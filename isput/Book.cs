@@ -15,9 +15,20 @@ namespace isput
 
 
 
-        public event bookEvent bookHasBeenBought;
-        public event bookEvent bookHasBeenSold;
+        protected bookEvent bookHasBeenBought;
+        protected bookEvent bookHasBeenSold;
 
+
+        public event bookEvent BookHasBeenBought
+        {
+            add { bookHasBeenBought += value; }
+            remove { bookHasBeenBought -= value; }
+        }
+        public event bookEvent BookHasBeenSold
+        {
+            add { bookHasBeenSold += value; }
+            remove { bookHasBeenSold -= value; }
+        }
         public Int32 Id
         {
             get { return this._id; }
@@ -68,72 +79,39 @@ namespace isput
             this._isBought = isBought;
         }
 
-        public void buy()
+        public virtual void buy()
         {
             if (bookHasBeenBought != null)
             {
                 if (this._isBought == false)
                 {
-
-
-                    if (this is ScienceBook)
-                    {
-                        this._isBought = true;
-                        this.bookHasBeenBought($"Science Book with id {this._id} has been bought bought for {this._price}");
-                        this._price = 0;
-                    }
-                    else
-                    {
-                        this._isBought = true;
-                        this.bookHasBeenBought($"Book with id {this._id} has been bought bought for {this._price}");
-                        this._price = 0;
-                    }
+                    this._isBought = true;
+                    this.bookHasBeenBought($"Book with id {this._id} has been bought bought for {this._price}");
+                    this._price = 0;
                 }
                 else
                 {
-                    if (this is ScienceBook)
-                    {
-                        this.bookHasBeenBought("You can`t buy science book that has already been sold");
-                    }
-                    else
-                    {
-                        this.bookHasBeenBought("You can`t buy  book that has already been sold");
-                    }
+                    this.bookHasBeenBought("You can`t buy  book that has already been sold");
                 }
             }
         }
-        public void sell(Double price)
+        public virtual void sell(Double price)
         {
             if (bookHasBeenSold != null)
             {
                 if (this._isBought == true)
                 {
-                    if (this is ScienceBook)
-                    {
-                        this._price = price;
-                        this._isBought = false;
-                        this.bookHasBeenBought($"Science Book with id {this._id} has been sold for {this._price}");
-                    }
-                    else
-                    {
-                        this._price = price;
-                        this._isBought = false;
-                        this.bookHasBeenBought($"Book with id {this._id} has been sold for {this._price}");
-                    }
+                    this._price = price;
+                    this._isBought = false;
+                    this.bookHasBeenBought($"Book with id {this._id} has been sold for {this._price}");
                 }
                 else
                 {
-                    if (this is ScienceBook)
-                    {
-                        this.bookHasBeenBought("You can`t sell science book that has not been bought");
-                    }
-                    else
-                    {
-                        this.bookHasBeenBought("You can`t sell  book that has not been bought");
-                    }
-                }
 
+                    this.bookHasBeenBought("You can`t sell  book that has not been bought");
+                }
             }
+
         }
         public static bool operator <(Book left, Book right)
         {
@@ -144,6 +122,7 @@ namespace isput
         {
             return left.Price > right.Price;
         }
+
 
         public virtual void print()
         {

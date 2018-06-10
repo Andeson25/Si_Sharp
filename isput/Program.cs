@@ -15,8 +15,8 @@ namespace isput
             List<Book> books = BookService.FindAll();
             foreach (Book one in books)
             {
-                one.bookHasBeenBought += BookEvent;
-                one.bookHasBeenSold += BookEvent;
+                one.BookHasBeenBought += BookEvent;
+                one.BookHasBeenSold += BookEvent;
 
                 if (one is ScienceBook)
                 {
@@ -30,8 +30,8 @@ namespace isput
                 {
                     one.buy();
                 }
-                one.bookHasBeenBought -= BookEvent;
-                one.bookHasBeenSold -= BookEvent;
+                one.BookHasBeenBought -= BookEvent;
+                one.BookHasBeenSold -= BookEvent;
             }
             //Console.WriteLine("SAVED TO FILE..... \n");
             //BookService.Save(books);
@@ -42,6 +42,7 @@ namespace isput
             }
             Console.WriteLine("MAX ");
             BookService.FindMostExpensive().print();
+            Console.ReadKey();
         }
     }
 }
