@@ -40,6 +40,8 @@ namespace isput
             {
                 one.print();
             }
+            Console.WriteLine("MAX ");
+            BookService.FindMostExpensive().print();
         }
     }
 }

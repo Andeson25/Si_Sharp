@@ -12,18 +12,13 @@ namespace isput
         {
             string json = File.ReadAllText("../../books.json");
             List<Object> objects = JsonConvert.DeserializeObject<List<Object>>(json);
-            List<Book> books = new List<Book>();
             foreach (JObject one in objects)
             {
                 if (one.ContainsKey("Description"))
-                    books.Add(JsonConvert.DeserializeObject<ScienceBook>(one.ToString()));
-                else
-                    books.Add(JsonConvert.DeserializeObject<Book>(one.ToString()));
-            }
-            foreach (Book one in books)
-            {
-                if (one.Id == id)
-                    return one;
+                    if ((Int32)one.GetValue("Id") == id)
+                        return JsonConvert.DeserializeObject<ScienceBook>(one.ToString());
+                if ((Int32)one.GetValue("Id") == id)
+                    return JsonConvert.DeserializeObject<Book>(one.ToString());
             }
             return new Book();
         }
@@ -31,20 +26,15 @@ namespace isput
         {
             string json = File.ReadAllText("../../books.json");
             List<Object> objects = JsonConvert.DeserializeObject<List<Object>>(json);
-            List<Book> books = new List<Book>();
-            foreach (JObject one in objects)
-            {
-                if (one.ContainsKey("Description"))
-                    books.Add(JsonConvert.DeserializeObject<ScienceBook>(one.ToString()));
-                else
-                    books.Add(JsonConvert.DeserializeObject<Book>(one.ToString()));
-            }
             Book max = new Book();
             BookCompare compare = new BookCompare();
-            foreach (Book one in books)
+            foreach (JObject one in objects)
             {
-                if (compare.Compare(one, max) >= 0)
-                    max = one;
+                if (one.ContainsKey("Description")&& compare.Compare(JsonConvert.DeserializeObject<ScienceBook>(one.ToString()), max) >= 0)
+                    max = JsonConvert.DeserializeObject<ScienceBook>(one.ToString());
+                else
+                    if (compare.Compare(JsonConvert.DeserializeObject<Book>(one.ToString()), max) >= 0)
+                    max = JsonConvert.DeserializeObject<Book>(one.ToString());
             }
             return max;
         }
