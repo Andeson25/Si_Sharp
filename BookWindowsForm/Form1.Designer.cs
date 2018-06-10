@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.BookGrid = new System.Windows.Forms.DataGridView();
@@ -39,8 +38,6 @@
             this.isBought = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
-            this.scienceBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AddBook = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,8 +62,6 @@
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.BookGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scienceBookBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +72,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 73);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Show Books";
+            this.button1.Text = "Delete Book";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -139,14 +134,6 @@
             this.StatusStrip.Size = new System.Drawing.Size(792, 22);
             this.StatusStrip.TabIndex = 3;
             this.StatusStrip.Text = "statusStrip1";
-            // 
-            // scienceBookBindingSource
-            // 
-            this.scienceBookBindingSource.DataSource = typeof(BookLibrary.ScienceBook);
-            // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataSource = typeof(BookLibrary.Book);
             // 
             // AddBook
             // 
@@ -332,8 +319,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BookGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scienceBookBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -346,8 +331,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView BookGrid;
         private System.Windows.Forms.StatusStrip StatusStrip;
-        private System.Windows.Forms.BindingSource scienceBookBindingSource;
-        private System.Windows.Forms.BindingSource bookBindingSource;
         private System.Windows.Forms.Button AddBook;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
