@@ -30,7 +30,7 @@ namespace isput
             BookCompare compare = new BookCompare();
             foreach (JObject one in objects)
             {
-                if (one.ContainsKey("Description")&& compare.Compare(JsonConvert.DeserializeObject<ScienceBook>(one.ToString()), max) >= 0)
+                if (one.ContainsKey("Description") && compare.Compare(JsonConvert.DeserializeObject<ScienceBook>(one.ToString()), max) >= 0)
                     max = JsonConvert.DeserializeObject<ScienceBook>(one.ToString());
                 else
                     if (compare.Compare(JsonConvert.DeserializeObject<Book>(one.ToString()), max) >= 0)
