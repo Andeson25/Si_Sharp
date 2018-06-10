@@ -27,13 +27,12 @@ namespace isput
             string json = File.ReadAllText("../../books.json");
             List<Object> objects = JsonConvert.DeserializeObject<List<Object>>(json);
             Book max = new Book();
-            BookCompare compare = new BookCompare(); 
             foreach (JObject one in objects)
             {
-                if (one.ContainsKey("Description") && compare.Compare(JsonConvert.DeserializeObject<ScienceBook>(one.ToString()), max) >= 0)
+                if (one.ContainsKey("Description") && JsonConvert.DeserializeObject<ScienceBook>(one.ToString()).CompareTo(max) >= 0)
                     max = JsonConvert.DeserializeObject<ScienceBook>(one.ToString());
                 else
-                    if (compare.Compare(JsonConvert.DeserializeObject<Book>(one.ToString()), max) >= 0)
+                    if (JsonConvert.DeserializeObject<Book>(one.ToString()).CompareTo(max) >= 0)
                     max = JsonConvert.DeserializeObject<Book>(one.ToString());
             }
             return max;

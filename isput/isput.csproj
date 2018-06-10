@@ -39,7 +39,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Book.cs" />
-    <Compile Include="BookCompare.cs" />
     <Compile Include="ScienceBook.cs" />
     <Compile Include="BookService.cs" />
   </ItemGroup>

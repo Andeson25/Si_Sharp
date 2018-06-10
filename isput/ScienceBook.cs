@@ -39,6 +39,8 @@ namespace isput
                 }
             }
         }
+
+
         public override void sell(Double price)
         {
             if (this.bookHasBeenBought != null)

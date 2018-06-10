@@ -4,7 +4,7 @@ using Newtonsoft.Json.Serialization;
 namespace isput
 {
     public delegate void bookEvent(String message);
-    public class Book
+    public class Book: IComparable
     {
         private static int _globalID = 0;
         protected Int32 _id;
@@ -137,6 +137,24 @@ namespace isput
             this._name = obj.Name;
             this._price = obj.Price;
             this._isBought = this._price == 0.0 ? true : false;
+        }
+        public int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                return 1;
+            }
+            Book book = obj as Book;
+            if (this.Price.CompareTo(book.Price) > 0)
+            {
+                return 1;
+            }
+            else
+               if (this.Price.CompareTo(book.Price) < 0)
+            {
+                return -1;
+            }
+            return 0;
         }
     }
 }
