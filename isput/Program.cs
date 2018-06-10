@@ -11,7 +11,7 @@ namespace isput
         }
         public static void Main(string[] args)
         {
-            BookService.FindAll();
+            BookService.FindOne(6).print();
         }
     }
 }
