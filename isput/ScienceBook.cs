@@ -22,6 +22,5 @@ namespace isput
             Console.WriteLine("_______________\nid: {0}\nName: {1}\nAuthor: {2}\nIs bought: {3}\nPrice: {4}\nDescription: {5}\n_______________"
                               , _id, _name, _author, _isBought, _price, _description);
         }
-
     }
 }

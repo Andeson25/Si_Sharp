@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace isput
 {
@@ -11,7 +12,34 @@ namespace isput
         }
         public static void Main(string[] args)
         {
-            BookService.FindOne(6).print();
+            List<Book> books = BookService.FindAll();
+            foreach (Book one in books)
+            {
+                one.bookHasBeenBought += BookEvent;
+                one.bookHasBeenSold += BookEvent;
+
+                if (one is ScienceBook)
+                {
+                    Console.WriteLine($"Found ScinceBook with id = {one.Id}");
+                }
+                if (one.Id == 3)
+                {
+                    one.buy();
+                }
+                if(one.Id==6)
+                {
+                    one.sell(90000);
+                }
+                one.bookHasBeenBought -= BookEvent;
+                one.bookHasBeenSold -= BookEvent;
+            }
+            Console.WriteLine("NEW COLLECTION \n");
+            foreach( Book one in books)
+            {
+              
+                one.print();
+            }
+
         }
     }
 }

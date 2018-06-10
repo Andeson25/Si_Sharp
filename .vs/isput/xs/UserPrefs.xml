@@ -1,14 +1,6 @@
 ﻿<Properties StartupConfiguration="{24A060FE-BFF5-4CD1-8E76-ACDEF62FB5CC}|Default">
   <MonoDevelop.Ide.ItemProperties.isput PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="isput/Book.cs">
-    <Files>
-      <File FileName="isput/books.json" Line="36" Column="20" />
-      <File FileName="isput/ScienceBook.cs" Line="28" Column="1" />
-      <File FileName="isput/BookService.cs" Line="4" Column="23" />
-      <File FileName="isput/Program.cs" Line="20" Column="2" />
-      <File FileName="isput/Book.cs" Line="14" Column="37" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

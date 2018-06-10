@@ -67,25 +67,43 @@ namespace isput
         {
             if (bookHasBeenBought != null)
             {
-                this._isBought = true;
-                this.bookHasBeenBought($"Book has been bought bought for {this._price}");
-                this._price = 0;
+                if (this is ScienceBook)
+                {
+                    this._isBought = true;
+                    this.bookHasBeenBought($"Science Book with id {this._id} has been bought bought for {this._price}");
+                    this._price = 0;
+                }
+                else
+                {
+                    this._isBought = true;
+                    this.bookHasBeenBought($"Book with id {this._id} has been bought bought for {this._price}");
+                    this._price = 0;
+                }
             }
         }
         public void sell(Double price)
         {
             if (bookHasBeenSold != null)
             {
-                this._price = price;
-                this._isBought = false;
-                this.bookHasBeenBought($"Book has been sold for {this._price}");
+                if (this is ScienceBook)
+                {
+                    this._price = price;
+                    this._isBought = false;
+                    this.bookHasBeenBought($"Science Book with id {this._id} has been sold for {this._price}");
+                }
+                else
+                {
+                    this._price = price;
+                    this._isBought = false;
+                    this.bookHasBeenBought($"Book with id {this._id} has been sold for {this._price}");
+                }
             }
         }
         public static bool operator <(Book left, Book right)
         {
             return left.Price < right.Price;
         }
-     
+
         public static bool operator >(Book left, Book right)
         {
             return left.Price > right.Price;
