@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace BookLibrary
 {
     public class ScienceBook : Book
@@ -39,7 +41,10 @@ namespace BookLibrary
                 }
             }
         }
-
+        public override string ToString()
+        {
+            return $"Id={this.Id}\nName={this.Name}\nAuthor={this.Author}\nPrice={this.Price}\nIs Bought={this.isBought}\nDecription={this.Description}";
+        }
 
         public override void sell(Double price)
         {
@@ -56,6 +61,11 @@ namespace BookLibrary
                     this.bookHasBeenBought("You can`t sell science book that has not been bought");
                 }
             }
+        }
+        public override string[] toArray()
+        {
+            string[] arr = {this.Id.ToString() , this.Name, this.Author, this.Price.ToString(), this.isBought.ToString(), this.Description };
+            return arr;
         }
     }
 }

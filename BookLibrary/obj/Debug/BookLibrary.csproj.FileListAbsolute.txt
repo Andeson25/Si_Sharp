@@ -1,2 +1,9 @@
 C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\obj\Debug\BookLibrary.csprojAssemblyReference.cache
 C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\obj\Debug\BookLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\bin\Debug\BookLibrary.dll
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\bin\Debug\BookLibrary.pdb
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\obj\Debug\BookLibrary.csproj.CopyComplete
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\obj\Debug\BookLibrary.dll
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\obj\Debug\BookLibrary.pdb

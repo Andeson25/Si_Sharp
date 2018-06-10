@@ -37,23 +37,26 @@ namespace BookLibrary
             }
             return max;
         }
-        public static List<Book> FindAll()
+        public static List<Book> FindAll(String filePath)
         {
-            string json = File.ReadAllText("../../books.json");
+            string json = File.ReadAllText(filePath);
             List<Object> objects = JsonConvert.DeserializeObject<List<Object>>(json);
             List<Book> books = new List<Book>();
-            foreach (JObject one in objects)
+            if (objects!=null)
             {
-                if (one.ContainsKey("Description"))
-                    books.Add(JsonConvert.DeserializeObject<ScienceBook>(one.ToString()));
-                else
-                    books.Add(JsonConvert.DeserializeObject<Book>(one.ToString()));
+                foreach (JObject one in objects)
+                {
+                    if (one.ContainsKey("Description"))
+                        books.Add(JsonConvert.DeserializeObject<ScienceBook>(one.ToString()));
+                    else
+                        books.Add(JsonConvert.DeserializeObject<Book>(one.ToString()));
+                }
             }
             return books;
         }
-        public static void Save(List<Book> list)
+        public static void Save(List<Book> list, String path)
         {
-            File.WriteAllText("../../books.json", JsonConvert.SerializeObject(list));
+            File.WriteAllText(path, JsonConvert.SerializeObject(list));
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json.Serialization;
 
 namespace BookLibrary
 {
     public delegate void bookEvent(String message);
-    public class Book: IComparable
+    public class Book : IComparable
     {
         private static int _globalID = 0;
         protected Int32 _id;
@@ -137,6 +138,16 @@ namespace BookLibrary
             this._name = obj.Name;
             this._price = obj.Price;
             this._isBought = this._price == 0.0 ? true : false;
+        }
+
+        public override string ToString()
+        {
+            return $"Id={this.Id}\nName={this.Name}\nAuthor={this.Author}\nPrice={this.Price}\nIs Bought={this.isBought}";
+        }
+        public virtual string[] toArray()
+        {
+            string[] arr = {this.Id.ToString(), this.Name, this.Author, this.Price.ToString(), this.isBought.ToString() };
+            return arr;
         }
         public int CompareTo(object obj)
         {
