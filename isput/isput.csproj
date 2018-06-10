@@ -45,6 +45,7 @@
   <ItemGroup>
     <None Include="books.json" />
     <None Include="packages.config" />
+    <None Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
