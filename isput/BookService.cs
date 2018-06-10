@@ -62,5 +62,9 @@ namespace isput
             }
             return books;
         }
+        public static void Save(List<Book> list)
+        {
+            File.WriteAllText("../../books.json", JsonConvert.SerializeObject(list));
+        }
     }
 }

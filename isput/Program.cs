@@ -24,22 +24,22 @@ namespace isput
                 }
                 if (one.Id == 3)
                 {
-                    one.buy();
+                    one.sell(300);
                 }
-                if(one.Id==6)
+                if (one.Id == 6)
                 {
-                    one.sell(90000);
+                    one.buy();
                 }
                 one.bookHasBeenBought -= BookEvent;
                 one.bookHasBeenSold -= BookEvent;
             }
-            Console.WriteLine("NEW COLLECTION \n");
-            foreach( Book one in books)
+            //Console.WriteLine("SAVED TO FILE..... \n");
+            //BookService.Save(books);
+            Console.WriteLine("READ FROM FILE..... \n");
+            foreach (Book one in books)
             {
-              
                 one.print();
             }
-
         }
     }
 }

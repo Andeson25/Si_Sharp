@@ -40,6 +40,11 @@ namespace isput
             get { return this._price; }
             set { this._price = value; }
         }
+        public Boolean isBought
+        {
+            get { return this._isBought; }
+            set { this._isBought = value; }
+        }
         public Book()
         {
             if (_globalID == 0)
@@ -49,7 +54,7 @@ namespace isput
             _name = "DefaultName";
             _author = "DefaultAuthor";
             _price = 0;
-            _isBought = false;
+            isBought = true;
         }
         public Book(string name, string author, bool isBought, double price)
         {
@@ -67,17 +72,33 @@ namespace isput
         {
             if (bookHasBeenBought != null)
             {
-                if (this is ScienceBook)
+                if (this._isBought == false)
                 {
-                    this._isBought = true;
-                    this.bookHasBeenBought($"Science Book with id {this._id} has been bought bought for {this._price}");
-                    this._price = 0;
+
+
+                    if (this is ScienceBook)
+                    {
+                        this._isBought = true;
+                        this.bookHasBeenBought($"Science Book with id {this._id} has been bought bought for {this._price}");
+                        this._price = 0;
+                    }
+                    else
+                    {
+                        this._isBought = true;
+                        this.bookHasBeenBought($"Book with id {this._id} has been bought bought for {this._price}");
+                        this._price = 0;
+                    }
                 }
                 else
                 {
-                    this._isBought = true;
-                    this.bookHasBeenBought($"Book with id {this._id} has been bought bought for {this._price}");
-                    this._price = 0;
+                    if (this is ScienceBook)
+                    {
+                        this.bookHasBeenBought("You can`t buy science book that has already been sold");
+                    }
+                    else
+                    {
+                        this.bookHasBeenBought("You can`t buy  book that has already been sold");
+                    }
                 }
             }
         }
@@ -85,18 +106,33 @@ namespace isput
         {
             if (bookHasBeenSold != null)
             {
-                if (this is ScienceBook)
+                if (this._isBought == true)
                 {
-                    this._price = price;
-                    this._isBought = false;
-                    this.bookHasBeenBought($"Science Book with id {this._id} has been sold for {this._price}");
+                    if (this is ScienceBook)
+                    {
+                        this._price = price;
+                        this._isBought = false;
+                        this.bookHasBeenBought($"Science Book with id {this._id} has been sold for {this._price}");
+                    }
+                    else
+                    {
+                        this._price = price;
+                        this._isBought = false;
+                        this.bookHasBeenBought($"Book with id {this._id} has been sold for {this._price}");
+                    }
                 }
                 else
                 {
-                    this._price = price;
-                    this._isBought = false;
-                    this.bookHasBeenBought($"Book with id {this._id} has been sold for {this._price}");
+                    if (this is ScienceBook)
+                    {
+                        this.bookHasBeenBought("You can`t sell science book that has not been bought");
+                    }
+                    else
+                    {
+                        this.bookHasBeenBought("You can`t sell  book that has not been bought");
+                    }
                 }
+
             }
         }
         public static bool operator <(Book left, Book right)
@@ -121,6 +157,7 @@ namespace isput
             this._author = obj.Author;
             this._name = obj.Name;
             this._price = obj.Price;
+            this._isBought = this._price == 0.0 ? true : false;
         }
     }
 }
