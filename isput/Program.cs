@@ -11,8 +11,7 @@ namespace isput
         }
         public static void Main(string[] args)
         {
-            var book = new Book("name", "author", true, 100.5);
-            book.print();
+            BookService.FindAll();
         }
     }
 }
