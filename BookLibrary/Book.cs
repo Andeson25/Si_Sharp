@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json.Serialization;
 
-namespace isput
+namespace BookLibrary
 {
     public delegate void bookEvent(String message);
     public class Book: IComparable

@@ -1,0 +1,2 @@
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\obj\Debug\BookLibrary.csprojAssemblyReference.cache
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookLibrary\obj\Debug\BookLibrary.csproj.CoreCompileInputs.cache
