@@ -1,0 +1,15 @@
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\obj\Debug\BookWindowsForm.csprojAssemblyReference.cache
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\obj\Debug\BookWindowsForm.Form1.resources
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\obj\Debug\BookWindowsForm.Properties.Resources.resources
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\obj\Debug\BookWindowsForm.csproj.GenerateResource.cache
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\obj\Debug\BookWindowsForm.csproj.CoreCompileInputs.cache
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\bin\Debug\BookWindowsForm.exe.config
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\bin\Debug\BookWindowsForm.exe
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\bin\Debug\BookWindowsForm.pdb
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\bin\Debug\BookLibrary.dll
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\bin\Debug\BookLibrary.pdb
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\obj\Debug\BookWindowsForm.csproj.CopyComplete
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\obj\Debug\BookWindowsForm.exe
+C:\Users\Danik\Desktop\Oleh\Si_Sharp\BookWindowsForm\obj\Debug\BookWindowsForm.pdb
