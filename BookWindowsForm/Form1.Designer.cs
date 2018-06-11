@@ -41,9 +41,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.SaveToolItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveAsToolItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +59,7 @@
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.DeleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BookGrid)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -81,9 +81,10 @@
             this.Price,
             this.isBought,
             this.Description});
-            this.BookGrid.Location = new System.Drawing.Point(12, 27);
+            this.BookGrid.Location = new System.Drawing.Point(24, 52);
+            this.BookGrid.Margin = new System.Windows.Forms.Padding(6);
             this.BookGrid.Name = "BookGrid";
-            this.BookGrid.Size = new System.Drawing.Size(615, 195);
+            this.BookGrid.Size = new System.Drawing.Size(1230, 375);
             this.BookGrid.TabIndex = 2;
             // 
             // Id
@@ -119,30 +120,35 @@
             // StatusStrip
             // 
             this.StatusStrip.BackColor = System.Drawing.Color.Transparent;
-            this.StatusStrip.Location = new System.Drawing.Point(0, 382);
+            this.StatusStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.StatusStrip.Location = new System.Drawing.Point(0, 755);
             this.StatusStrip.Name = "StatusStrip";
-            this.StatusStrip.Size = new System.Drawing.Size(792, 22);
+            this.StatusStrip.Padding = new System.Windows.Forms.Padding(2, 0, 28, 0);
+            this.StatusStrip.Size = new System.Drawing.Size(1584, 22);
             this.StatusStrip.TabIndex = 3;
             this.StatusStrip.Text = "statusStrip1";
             // 
             // AddBook
             // 
             this.AddBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.AddBook.Location = new System.Drawing.Point(633, 27);
+            this.AddBook.Location = new System.Drawing.Point(1266, 52);
+            this.AddBook.Margin = new System.Windows.Forms.Padding(6);
             this.AddBook.Name = "AddBook";
-            this.AddBook.Size = new System.Drawing.Size(154, 75);
+            this.AddBook.Size = new System.Drawing.Size(308, 144);
             this.AddBook.TabIndex = 4;
             this.AddBook.Text = "Add Book";
             this.AddBook.UseVisualStyleBackColor = true;
-            this.AddBook.Click += new System.EventHandler(this.button2_Click);
+            this.AddBook.Click += new System.EventHandler(this.AddClick);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(792, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
+            this.menuStrip1.Size = new System.Drawing.Size(1584, 44);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -150,10 +156,10 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem});
+            this.SaveToolItem,
+            this.SaveAsToolItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 38);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // openToolStripMenuItem
@@ -162,34 +168,35 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(340, 38);
             this.openToolStripMenuItem.Text = "&Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenFileCLick);
             // 
-            // saveToolStripMenuItem
+            // SaveToolItem
             // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click_1);
+            this.SaveToolItem.Image = ((System.Drawing.Image)(resources.GetObject("SaveToolItem.Image")));
+            this.SaveToolItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveToolItem.Name = "SaveToolItem";
+            this.SaveToolItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.SaveToolItem.Size = new System.Drawing.Size(340, 38);
+            this.SaveToolItem.Text = "&Save";
+            this.SaveToolItem.Click += new System.EventHandler(this.SaveFileClick);
             // 
-            // saveAsToolStripMenuItem
+            // SaveAsToolItem
             // 
-            this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
-            this.saveAsToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.SaveAsToolItem.Image = ((System.Drawing.Image)(resources.GetObject("SaveAsToolItem.Image")));
+            this.SaveAsToolItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveAsToolItem.Name = "SaveAsToolItem";
+            this.SaveAsToolItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.saveAsToolStripMenuItem.Text = "&Save as";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            this.SaveAsToolItem.Size = new System.Drawing.Size(340, 38);
+            this.SaveAsToolItem.Text = "&Save as";
+            this.SaveAsToolItem.Click += new System.EventHandler(this.SaveAsClick);
             // 
-            // openFileDialog1
+            // OpenFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.OpenFileDialog.FileName = "OpenFileDialog";
+            this.OpenFileDialog.Filter = "json file|*.json";
             // 
             // contentsToolStripMenuItem
             // 
@@ -289,33 +296,35 @@
             this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
-            // saveFileDialog1
+            // SaveFileDialog
             // 
-            this.saveFileDialog1.Filter = "json file|*.json";
+            this.SaveFileDialog.Filter = "json file|*.json";
             // 
             // DeleteButton
             // 
             this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.DeleteButton.Location = new System.Drawing.Point(633, 147);
+            this.DeleteButton.Location = new System.Drawing.Point(1266, 283);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(6);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(154, 75);
+            this.DeleteButton.Size = new System.Drawing.Size(308, 144);
             this.DeleteButton.TabIndex = 4;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteClick);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(792, 404);
+            this.ClientSize = new System.Drawing.Size(1584, 777);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.AddBook);
             this.Controls.Add(this.StatusStrip);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.BookGrid);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -334,8 +343,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem SaveAsToolItem;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog;
         private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
@@ -357,8 +366,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn isBought;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem SaveToolItem;
+        private System.Windows.Forms.SaveFileDialog SaveFileDialog;
         private System.Windows.Forms.Button DeleteButton;
     }
 }
